@@ -68,8 +68,9 @@ function getAverage(value1, value2) {
  *   (0,0) (1,0)    => 1
  *   (-5,0) (10,-10) => 18.027756377319946
  */
-function getDistanceBetweenPoints(/* x1, y1, x2, y2 */) {
-  throw new Error('Not implemented');
+function getDistanceBetweenPoints(x1, y1, x2, y2) {
+  // eslint-disable-next-line no-restricted-properties
+  return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
 }
 
 /**
@@ -106,8 +107,14 @@ function getLinearEquationRoot(/* a, b */) {
  *   (0,1) (0,1)     => 0
  *   (0,1) (1,2)     => 0
  */
-function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
-  throw new Error('Not implemented');
+function getAngleBetweenVectors(x1, y1, x2, y2) {
+  // eslint-disable-next-line no-restricted-properties
+  const vec1 = Math.sqrt(Math.pow(x1, 2) + Math.pow(y1, 2));
+  // eslint-disable-next-line no-restricted-properties
+  const vec2 = Math.sqrt(Math.pow(x2, 2) + Math.pow(y2, 2));
+  const dotProduct = x1 * x2 + y1 * y2;
+  const cos = dotProduct / (vec1 * vec2);
+  return Math.acos(cos);
 }
 
 /**

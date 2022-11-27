@@ -313,6 +313,11 @@ function encodeToRot13(str) {
     'x',
     'y',
     'z',
+    ' ',
+    '?',
+    '!',
+    ':',
+    ';',
   ];
   const converse = [
     'N',
@@ -367,6 +372,11 @@ function encodeToRot13(str) {
     'k',
     'l',
     'm',
+    ' ',
+    '?',
+    '!',
+    ':',
+    ';',
   ];
   const strToArr = str.split('');
   let result = '';
@@ -374,9 +384,6 @@ function encodeToRot13(str) {
   for (let i = 0; i < strToArr.length; i++) {
     // eslint-disable-next-line no-plusplus
     for (let j = 0; j < inverse.length; j++) {
-      if (strToArr[i] === ' ') {
-        result += ' ';
-      }
       if (strToArr[i] === inverse[j]) {
         result += converse[j];
       }
